@@ -22,13 +22,15 @@
 #'@return a data frame formatter in this manner: (server,url,user,password,table). If the arguments are not correct. Then a data.frame with no rows is created.
 #'
 #'The expactactions are as follow:
+#'Expectation no 0: the return value is a data.frame 
 #'Expectation no 1: the number of columns is equal 5. 
 #'Expectation no 2: the number of rows is equal to the number of servers
 #'Expectation no 3: the number of rows is equal to 0, if the length of url, user, or table is smaller than the length of server
 #'Expectation no 4: the number of row is 0, if any of the urls does not start with http
-#'
-#'
-datashield.build.Login.data.frame.o <- function (data.computers.name, data.computers.url, data.computers.table.name,  users.id, users.password) 
+#'@author Patricia Ryser-Welch
+#'@export datashield.build.login.data.frame.o
+
+datashield.build.login.data.frame.o <- function (data.computers.name, data.computers.url, data.computers.table.name,  users.id, users.password) 
 {
   #assign the arguments to the data frame format.
   server <- as.character(data.computers.name)
@@ -37,8 +39,8 @@ datashield.build.Login.data.frame.o <- function (data.computers.name, data.compu
   password <- as.character(users.password)
   table <- as.character(data.computers.table.name)
   return.data.frame  =  data.frame(server = character(0), user = character(0),user= character(0), password = character(0),table=character(0))
+  colnames(return.data.frame) <- c('server','url','user','password','table')
   NO.COLUMNS = 5
-  
   
   #Verify the length of each vector is the same
   expected.elements = length(server) * NO.COLUMNS

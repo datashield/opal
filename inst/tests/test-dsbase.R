@@ -12,39 +12,39 @@
 # Set up
 #
 
-source("setup.R")
+#source("setup.R")
 
 #
 # Tests
 #
 
-context("dsbase::meandDS")
+#context("dsbase::meandDS")
 
-stat.mean <- datashield.aggregate(opals, quote(meanDS(D$LAB_TSC)), async=TRUE)
+#stat.mean <- datashield.aggregate(opals, quote(meanDS(D$LAB_TSC)), async=TRUE)
 #print(stat.mean)
 
-test_that("mean values", { 
-  expect_false(is.na(stat.mean$sim1))
-  expect_equal(stat.mean$sim1, 5.87211344770338, tolerance = .000000000000001)
-  expect_false(is.na(stat.mean$sim2))
-  expect_equal(stat.mean$sim2, 5.84526388341867, tolerance = .000000000000001)
-  expect_false(is.na(stat.mean$sim3))
-  expect_equal(stat.mean$sim3, 5.84630008623168, tolerance = .000000000000001)
-})
+#test_that("mean values", { 
+#  expect_false(is.na(stat.mean$sim1))
+#  expect_equal(stat.mean$sim1, 5.87211344770338, tolerance = .000000000000001)
+#  expect_false(is.na(stat.mean$sim2))
+#  expect_equal(stat.mean$sim2, 5.84526388341867, tolerance = .000000000000001)
+#  expect_false(is.na(stat.mean$sim3))
+#  expect_equal(stat.mean$sim3, 5.84630008623168, tolerance = .000000000000001)
+#})
 
-context("dsbase::quantileMeanDS")
+#context("dsbase::quantileMeanDS")
 
-quantiles <- datashield.aggregate(opals, quote(quantileMeanDS(D$LAB_TSC)), async=TRUE)
+#quantiles <- datashield.aggregate(opals, quote(quantileMeanDS(D$LAB_TSC)), async=TRUE)
 #print(quantiles)
 
-test_that("quantile mean values", { 
-  expect_equal(as.numeric(quantiles$sim1["Mean"]), 5.87211344770338, tolerance = .000000000000001)
-  expect_equal(as.numeric(quantiles$sim2["Mean"]), 5.84526388341867, tolerance = .000000000000001)
-  expect_equal(as.numeric(quantiles$sim3["Mean"]), 5.84630008623168, tolerance = .000000000000001)
-})
+#test_that("quantile mean values", { 
+#  expect_equal(as.numeric(quantiles$sim1["Mean"]), 5.87211344770338, tolerance = .000000000000001)
+#  expect_equal(as.numeric(quantiles$sim2["Mean"]), 5.84526388341867, tolerance = .000000000000001)
+#  expect_equal(as.numeric(quantiles$sim3["Mean"]), 5.84630008623168, tolerance = .000000000000001)
+#})
 
 #
 # Tear down
 #
 
-source("teardown.R")
+#source("teardown.R")

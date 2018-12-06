@@ -12,43 +12,43 @@
 # Set up
 #
 
-library(opal)
-library(testthat)
+#library(opal)
+#library(testthat)
 
 #
 # Tests
 #
 
-context("opal::opal.version_compare")
+#context("opal::opal.version_compare")
 
-test_that("opal version compare 2.8.0>2.6", { 
-  expect_equal(opal.version_compare(list(version="2.8.0"), "2.6"), 1)
-})
+#test_that("opal version compare 2.8.0>2.6", { 
+#  expect_equal(opal.version_compare(list(version="2.8.0"), "2.6"), 1)
+#})
 
-test_that("opal version compare 2.8.0-b1234>2.6", { 
-  expect_equal(opal.version_compare(list(version="2.8.0-b1234"), "2.6"), 1)
-})
+#test_that("opal version compare 2.8.0-b1234>2.6", { 
+#  expect_equal(opal.version_compare(list(version="2.8.0-b1234"), "2.6"), 1)
+#})
 
-test_that("opal version compare 2.6.0==2.6", { 
-  expect_equal(opal.version_compare(list(version="2.6.0"), "2.6"), 0)
-})
+#test_that("opal version compare 2.6.0==2.6", { 
+#  expect_equal(opal.version_compare(list(version="2.6.0"), "2.6"), 0)
+#})
 
-test_that("opal version compare 2.6.0==2.6.0", { 
-  expect_equal(opal.version_compare(list(version="2.6.0"), "2.6.0"), 0)
-})
+#test_that("opal version compare 2.6.0==2.6.0", { 
+#  expect_equal(opal.version_compare(list(version="2.6.0"), "2.6.0"), 0)
+#})
 
-test_that("opal version compare 2.6.1==2.6", { 
-  expect_equal(opal.version_compare(list(version="2.6.1"), "2.6"), 1)
-})
+#test_that("opal version compare 2.6.1==2.6", { 
+#  expect_equal(opal.version_compare(list(version="2.6.1"), "2.6"), 1)
+#})
 
-test_that("opal version compare 2.6.0==2.6.1", { 
-  expect_equal(opal.version_compare(list(version="2.6.0"), "2.6.1"), -1)
-})
+#test_that("opal version compare 2.6.0==2.6.1", { 
+#  expect_equal(opal.version_compare(list(version="2.6.0"), "2.6.1"), -1)
+#})
 
-test_that("opal version compare 2.4.0<2.6", { 
-  expect_equal(opal.version_compare(list(version="2.4.0"), "2.6"), -1)
-})
+#test_that("opal version compare 2.4.0<2.6", { 
+#  expect_equal(opal.version_compare(list(version="2.4.0"), "2.6"), -1)
+#})
 
-test_that("opal version compare 2.10.0>2.6", { 
-  expect_equal(opal.version_compare(list(version="2.10.0"), "2.6"), 1)
-})
+#test_that("opal version compare 2.10.0>2.6", { 
+#  expect_equal(opal.version_compare(list(version="2.10.0"), "2.6"), 1)
+#})
