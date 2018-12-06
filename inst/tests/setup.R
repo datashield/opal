@@ -31,3 +31,7 @@ logindata <- data.frame(server,url,user,password,table)
 myvar <- list("LAB_TSC", "LAB_HDL")
 opals <- datashield.login(logins=logindata,assign=TRUE,variables=myvar)
 
+#
+# Testing 
+# 
+
