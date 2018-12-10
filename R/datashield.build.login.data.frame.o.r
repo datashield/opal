@@ -8,7 +8,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #-------------------------------------------------------------------------------
 
-#'@title Builds a datagframe to login to datashield
+#'@title Builds a dataframe to login to datashield
 #'@description This function generates a valid data frame, that can be used to login
 #'to some data computers (i.e. opal servers). The data frame models a double-entry table. The
 #'columns are defined as server, url, user, password and table name. Each row holds the information 
@@ -45,6 +45,7 @@ datashield.build.login.data.frame.o <- function (data.computers.name, data.compu
   #Verify the length of each vector is the same
   expected.elements = length(server) * NO.COLUMNS
   total.elements = length(server) + length(url) + length(user) + length(password) + length(table)
+  
   
   if (expected.elements == total.elements)
   {
