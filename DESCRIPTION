@@ -24,6 +24,7 @@ Description: Data integration Web application for biobanks by OBiBa. Opal is
 License: GPL-3
 OpalVersion: >= 2.6.0
 URL: http://www.obiba.org
-BugReports: http://jira.obiba.org
-RoxygenNote: 6.0.1
+BugReports: https://github.com/datashield/opal
+RoxygenNote: 6.1.1
+Encoding: UTF-8
 VignetteBuilder: knitr
