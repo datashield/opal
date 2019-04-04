@@ -69,23 +69,23 @@ Rename the new folder and list folder content:
 Write a file from the Opal file system into the R server session workspace:
 
 ```{r}
-#opal.file_write(o, '/projects/datashield/bar/datashield.zip')
-#opal.execute(o, 'list.files()')
+opal.file_write(o, '/projects/datashield/bar/datashield.zip')
+opal.execute(o, 'list.files()')
 ```
 
 Read back the file into the Opal file system:
 
 ```{r}
-#opal.file_read(o, 'datashield.zip', '/projects/datashield/bar/ds.zip')
-#opal.file_ls(o, '/projects/datashield/bar')
+opal.file_read(o, 'datashield.zip', '/projects/datashield/bar/ds.zip')
+opal.file_ls(o, '/projects/datashield/bar')
 ```
 
 
 Remove created folder and list folder content:
 
 ```{r}
-#opal.file_rm(o, '/projects/datashield/bar')
-#opal.file_ls(o, '/projects/datashield')
+opal.file_rm(o, '/projects/datashield/bar')
+opal.file_ls(o, '/projects/datashield')
 ```
 
 Good practice is to free server resources by sending a logout request:
