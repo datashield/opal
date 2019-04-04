@@ -625,7 +625,10 @@ opal.assign.data <- function(opal, symbol, value, async=FALSE) {
   class(opal) <- "opal"
   
   # get user profile to test sign-in
-  ignore <- .get(opal, "system", "subject-profile", "_current")
+  profile <- .get(opal, "system", "subject-profile", "_current")
+  if(is.null(username)) {
+    opal$username <- profile$principal
+  }
   
   opal
 }
