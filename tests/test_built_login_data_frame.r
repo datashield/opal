@@ -12,7 +12,7 @@
 #'@title test the function datashield.build.login.data.frame.o(server,url,table,user,password)
 #'@description These functions set the expectations of the function https://www.tidyverse.org/articles/2017/12/testthat-2-0-0/
 
-#'The expactactions are as follow:
+#'The expectations are as follow:
 #'Expectation no 0: the return value is a data.frame 
 #'Expectation no 1: the number of columns is equal 5. 
 #'Expectation no 2: the number of rows is equal to the number of servers
@@ -38,7 +38,7 @@ init.correct.data <- function()
 init.incorrect.url.http <- function()
 {
     server <- c('study1', 'study2', 'study3')
-    url <- c('//192.168.56.100:8080','http://192.168.56.100:8080','http://192.168.56.100:8080')
+    url <- c('//192.168.56.100:8080','https://192.168.56.100:8080','https://192.168.56.100:8080')
     user <- c('administrator','administrator','administrator')
     password <- c('datashield_test&','datashield_test&','datashield_test&')
     table <- c('DASIM.DASIM1', 'DASIM.DASIM2', 'DASIM.DASIM3')
@@ -49,7 +49,7 @@ init.incorrect.url.http <- function()
 init.incorrect.server <- function()
 {
     server <- c('study1')
-    url <- c('http://192.168.56.100:8080','http://192.168.56.100:8080','http://192.168.56.100:8080')
+    url <- c('https://192.168.56.100:8080','https://192.168.56.100:8080','https://192.168.56.100:8080')
     user <- c('administrator','administrator','administrator')
     password <- c('datashield_test&','datashield_test&','datashield_test&')
     table <- c('DASIM.DASIM1', 'DASIM.DASIM2', 'DASIM.DASIM3')
@@ -59,7 +59,7 @@ init.incorrect.server <- function()
 init.incorrect.user <- function()
 {
     server <- c('study1', 'study2', 'study3')
-    url <- c('http://192.168.56.100:8080','http://192.168.56.100:8080','http://192.168.56.100:8080')
+    url <- c('https://192.168.56.100:8080','https://192.168.56.100:8080','https://192.168.56.100:8080')
     user <- c('administrator','administrator')
     password <- c('datashield_test&','datashield_test&','datashield_test&')
     table <- c('DASIM.DASIM1', 'DASIM.DASIM2', 'DASIM.DASIM3')
@@ -80,7 +80,7 @@ init.incorrect.url <- function()
 init.incorrect.password <- function()
 {
     server <- c('study1', 'study2', 'study3')
-    url <- c('http://192.168.56.100:8080','http://192.168.56.100:8080','http://192.168.56.100:8080')
+    url <- c('https://192.168.56.100:8080','https://192.168.56.100:8080','https://192.168.56.100:8080')
     user <- c('administrator','administrator')
     password <- c('datashield_test&','datashield_test&','datashield_test&')
     table <- c('DASIM.DASIM1', 'DASIM.DASIM2', 'DASIM.DASIM3')
@@ -90,7 +90,7 @@ init.incorrect.password <- function()
 init.incorrect.table <- function()
 {
     server <- c('study1', 'study2', 'study3')
-    url <- c('http://192.168.56.100:8080','http://192.168.56.100:8080','http://192.168.56.100:8080')
+    url <- c('https://192.168.56.100:8080','https://192.168.56.100:8080','https://192.168.56.100:8080')
     user <- c('administrator','administrator','administrator')
     password <- c('datashield_test&','datashield_test&','datashield_test&')
     table <- c('DASIM.DASIM2', 'DASIM.DASIM3')
@@ -101,7 +101,7 @@ init.incorrect.table <- function()
 
 test_that('Expectation no 0 - return a data frame',
 {
-   print('Expection no 0 : format of returned dataframe ------')
+   print('Expectation no 0 : format of returned dataframe ------')
   
    for (i in 1:6)
    {
