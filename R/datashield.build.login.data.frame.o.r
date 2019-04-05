@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------------
-# Copyright (c) 2018 OBiBa. All rights reserved.
+# Copyright (c) 2019 OBiBa. All rights reserved.
 #  
 # This program and the accompanying materials
 # are made available under the terms of the GNU Public License v3.0.
@@ -15,7 +15,7 @@
 #'in relation to one data computer. The values for each column are passed  to the function as arguments.   
 #'
 #'@param data.computers.name A vector of characters listing all the names of the data computers
-#'@param data.computers.url A vector of characters listing each data computer HTTP address. The format is http://[TCPIP address or host name][:port]
+#'@param data.computers.url A vector of characters listing each data computer HTTP address. The format is https://[TCPIP address or host name][:port]
 #'@param data.computers.table.name A vector of characters listing the name of the table stored in a data computer 
 #'@param users.id A vector of characters listing a valid user name to log on on each server.
 #'@param users.password A vector of characters listing the password for each user to log in to a data computer.
@@ -28,9 +28,7 @@
 #'Expectation no 3: the number of rows is equal to 0, if the length of url, user, or table is smaller than the length of server
 #'Expectation no 4: the number of row is 0, if any of the urls does not start with http
 #'@author Patricia Ryser-Welch
-#'@Export
-
-
+#'@export
 datashield.build.login.data.frame.o <- function (data.computers.name, data.computers.url, data.computers.table.name,  users.id, users.password) 
 {
   #assign the arguments to the data frame format.
@@ -48,14 +46,21 @@ datashield.build.login.data.frame.o <- function (data.computers.name, data.compu
   total.elements = length(server) + length(url) + length(user) + length(password) + length(table)
   
   
-  if (expected.elements == total.elements)
+  if (expected.elements != total.elements)
   {
-    #verifies the url stars with http
-    if (all(startsWith(url,"https")))
-    {
-      return.data.frame  = data.frame(server,url,user,password,table)
-    }
+    stop("The length of the vectors passed as arguments are not the same length.")
   }
-  return(return.data.frame)
+  else 
+  {
+    if (!all(startsWith(url,"http"))) 
+    {
+      stop("Make sure each url starts with http")
+    }
+    if (!all(startsWith(url,"https")))
+    {
+      warning("Each url should starts with https")
+    }
+    return(data.frame(server,url,user,password,table))
+  }
 }
 
