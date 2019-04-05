@@ -12,7 +12,8 @@ Suggests:
     e1071,
     knitr,
     knitrBootstrap,
-    rmarkdown
+    rmarkdown,
+    testthat
 Description: Data integration Web application for biobanks by OBiBa. Opal is
     OBiBa's core database application for biobanks. Participant data, once
     collected from any data source, must be integrated and stored in a central

@@ -40,6 +40,7 @@ opal.file_download(o, '/tmp/datashield.zip', 'datashield-encrypted.zip', key='AB
 
 Upload the file at another location:
 
+
 ```{r eval=FALSE}
 list.files()
 opal.file_upload(o, 'datashield.zip', '/projects/datashield')
