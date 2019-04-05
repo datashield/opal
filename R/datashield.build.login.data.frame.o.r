@@ -28,6 +28,7 @@
 #'Expectation no 3: the number of rows is equal to 0, if the length of url, user, or table is smaller than the length of server
 #'Expectation no 4: the number of row is 0, if any of the urls does not start with http
 #'@author Patricia Ryser-Welch
+#'@Export
 
 
 datashield.build.login.data.frame.o <- function (data.computers.name, data.computers.url, data.computers.table.name,  users.id, users.password) 
